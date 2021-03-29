@@ -4,14 +4,20 @@ import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
+<<<<<<< HEAD
 import android.content.SharedPreferences;
+=======
+>>>>>>> fbda0da2748594a2b876164a9d3ed1ecac4044fb
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+<<<<<<< HEAD
 import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
+=======
+>>>>>>> fbda0da2748594a2b876164a9d3ed1ecac4044fb
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -30,7 +36,12 @@ public class EarthquakeActivity extends AppCompatActivity
     /**
      * URL for earthquake data from the USGS dataset
      */
+<<<<<<< HEAD
     private static final String USGS_REQUEST_URL = "https://earthquake.usgs.gov/fdsnws/event/1/query";
+=======
+    private static final String USGS_REQUEST_URL =
+            "https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&orderby=time&limit=30";
+>>>>>>> fbda0da2748594a2b876164a9d3ed1ecac4044fb
 
     /**
      * Constant value for the earthquake loader ID. We can choose any integer.
@@ -114,6 +125,7 @@ public class EarthquakeActivity extends AppCompatActivity
 
     @Override
     public Loader<List<Earthquake>> onCreateLoader(int i, Bundle bundle) {
+<<<<<<< HEAD
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         String minMagnitude = sharedPrefs.getString(
                 getString(R.string.settings_min_magnitude_key),
@@ -133,6 +145,10 @@ public class EarthquakeActivity extends AppCompatActivity
         uriBuilder.appendQueryParameter("orderby", orderBy);
 
         return new EarthquakeLoader(this, uriBuilder.toString());
+=======
+        // Create a new loader for the given URL
+        return new EarthquakeLoader(this, USGS_REQUEST_URL);
+>>>>>>> fbda0da2748594a2b876164a9d3ed1ecac4044fb
     }
 
     @Override
@@ -160,6 +176,7 @@ public class EarthquakeActivity extends AppCompatActivity
         // Loader reset, so we can clear out our existing data.
         mAdapter.clear();
     }
+<<<<<<< HEAD
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -177,4 +194,6 @@ public class EarthquakeActivity extends AppCompatActivity
         }
         return super.onOptionsItemSelected(item);
     }
+=======
+>>>>>>> fbda0da2748594a2b876164a9d3ed1ecac4044fb
 }

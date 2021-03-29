@@ -19,6 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
 
         <activity
             android:name=".SettingsActivity"
@@ -27,6 +28,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.earthquakereport.EarthquakeActivity"/>
         </activity>
+=======
+>>>>>>> fbda0da2748594a2b876164a9d3ed1ecac4044fb
     </application>
 
 </manifest>
